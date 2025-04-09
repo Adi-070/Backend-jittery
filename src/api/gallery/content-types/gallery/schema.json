@@ -4,16 +4,28 @@
   "info": {
     "singularName": "gallery",
     "pluralName": "galleries",
-    "displayName": "Gallery"
+    "displayName": "Gallery",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "text": {
+    "hovering_text": {
       "type": "string"
     },
-    "pictures": {
+    "modal_pictures": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "homepage_picture": {
       "allowedTypes": [
         "images",
         "files",
@@ -21,7 +33,10 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
+    },
+    "Project_name": {
+      "type": "string"
     }
   }
 }

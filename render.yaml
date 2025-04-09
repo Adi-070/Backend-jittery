@@ -1,0 +1,54 @@
+services:
+  - type: web
+    name: strapi-app
+    env: node
+    plan: free
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 1337
+
+      # Secrets
+      - key: APP_KEYS
+        value: apjvQVUf+OI02mwHx7rs3g==,eT6coiVyFmoVjGj+tRtobw==,k3NRTd6F42/3fokqQJojwQ==,Cwxs5DtR0SILbeakBUwLpQ==
+      - key: API_TOKEN_SALT
+        value: /KjNFwiXFvzdutIf2cTbmA==
+      - key: ADMIN_JWT_SECRET
+        value: wDMAf0sL4yqZlO4Z6gKy8Q==
+      - key: TRANSFER_TOKEN_SALT
+        value: LJVaywzgPg684F+pB9AAZw==
+      - key: JWT_SECRET
+        value: jCEDPmj5tZ4iucDaR0Xr5w==
+
+      # Database
+      - key: DATABASE_CLIENT
+        value: postgres
+      - key: DATABASE_HOST
+        value: ep-long-credit-a5jp6ah2-pooler.us-east-2.aws.neon.tech
+      - key: DATABASE_PORT
+        value: 5432
+      - key: DATABASE_NAME
+        value: neondb
+      - key: DATABASE_USERNAME
+        value: neondb_owner
+      - key: DATABASE_PASSWORD
+        value: npg_VTtgi7X5FrME
+      - key: DATABASE_SSL
+        value: "true"
+      - key: DATABASE_FILENAME
+        value: ""
+
+      # Cloudinary
+      - key: CLOUDINARY_NAME
+        value: dstst0m7e
+      - key: CLOUDINARY_KEY
+        value: "345966254623541"
+      - key: CLOUDINARY_SECRET
+        value: 2OyFaN5qyvkaDBqCIkUekhKm_Ts
+
+      # Node version (recommended)
+      - key: NODE_VERSION
+        value: 18
